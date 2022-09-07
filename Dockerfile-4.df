@@ -1,5 +1,7 @@
 FROM python:3.7-alpine
 
-# pass an array, first element is the executable and 
-# the other elements are the arguements for the executable.
-CMD ["python", "-c", "print('Hi there!!')" ]
+COPY hello_there.py /
+
+# pass an array to CMD, first element is the executable, in this case "python"  
+# and the other element is the arguement to execute.
+CMD ["python", "hello_there.py" ]
