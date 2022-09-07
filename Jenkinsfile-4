@@ -1,0 +1,22 @@
+pipeline {
+  agent { lable "linux"}
+
+  stages {
+    stage('build') {
+      steps {
+        sh '''
+          docker build -t hello_there -f Dockerfile-4.df
+        '''
+      }
+
+    }
+    stage('run'){
+      steps {
+        sh '''
+          docker run --rm hello_there
+        '''
+        
+      }
+    }
+  }
+}
