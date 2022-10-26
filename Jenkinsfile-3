@@ -1,20 +1,20 @@
 pipeline {
   agent any 
-  
+
   stages {
     stage('node-test') {
       steps {
-        sh "node --version"
+        sh ''' node --version '''
       }
     }
     stage('git-test') {
       steps {
-        sh "git --version
+        sh ''' git --version '''
       }
     }
     stage('curl-test') {
       steps {
-        sh "curl --version"
+        sh ''' curl --version '''
       }
     }
   }
